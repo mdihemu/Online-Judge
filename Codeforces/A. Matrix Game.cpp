@@ -8,7 +8,9 @@ using namespace std;
 #define IN freopen("input.txt","r",stdin);
 #define OUT freopen("output.txt","w",stdout);
 
-const int N = 1e3 + 5;
+const int N = 51;
+int a[N][N];
+int n,m;
 
 void solve();
 void cf()
@@ -24,20 +26,19 @@ int32_t main()
 
 void solve()
 {
-    int n,d;
-    cin >> n >> d;
-    int a[N];
+    cin >> n >> m;
+    set<int>r,c;
     for(int i=1;i<=n;i++){
-        cin >> a[i];
-    }
-    while(d--){
-        for(int i=2;i<=n;i++){
-            if(a[i] > 0){
-                a[i]--;
-                a[i-1]++;
-                break;
+        for(int j=1;j<=m;j++){
+            cin >> a[i][j];
+            if(a[i][j]==1){
+                r.insert(i),c.insert(j);
             }
         }
     }
-    cout << a[1] << endl;
+    int cnt = min(n-r.size(),m-c.size());
+    if(cnt%2)
+        cout << "Ashish\n";
+    else
+        cout << "Vivek\n";
 }

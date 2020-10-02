@@ -18,15 +18,18 @@ void solve()
 {
     int n;
     cin >> n;
-    int cnt=0;
-
-    while(n>=10){
-        int div = n/10;
-        cnt += 10*div;
-        n %= 10;
-        n += div;
+    int a[51] = {0};
+    vector<int> v(n*2),p;
+    for(int &e:v)
+        cin >> e;
+    for(int i=0;i<n*2;i++){
+        int x = v[i];
+        if(a[x]==0){
+            p.push_back(x);
+            a[x]++;
+        }
     }
-
-    cnt += n;
-    cout << cnt << endl;
+    for (auto i = p.begin(); i != p.end(); ++i)
+        cout << *i << " ";
+    cout << endl;
 }

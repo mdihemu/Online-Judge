@@ -8,36 +8,34 @@ using namespace std;
 #define IN freopen("input.txt","r",stdin);
 #define OUT freopen("output.txt","w",stdout);
 
-const int N = 1e3 + 5;
+const int N = 2e5 + 5;
+const double pi = 3.141592653589793238;
 
 void solve();
-void cf()
-{
-    int t; cin >> t; while(t--) solve();
-}
 int32_t main()
 {
     IOS;
-    cf();
-    ///solve();
+    int t; cin >> t;
+    while(t--) solve();
+    return 0;
 }
 
 void solve()
 {
-    int n,d;
-    cin >> n >> d;
-    int a[N];
-    for(int i=1;i<=n;i++){
+    int n;
+    cin >> n;
+    int a[n];
+    int cnt=0;
+    for(int i=0;i<n;i++){
         cin >> a[i];
     }
-    while(d--){
-        for(int i=2;i<=n;i++){
-            if(a[i] > 0){
-                a[i]--;
-                a[i-1]++;
-                break;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]>a[j]){
+                swap(a[i],a[j]);
+                cnt++;
             }
         }
     }
-    cout << a[1] << endl;
+    cout << cnt << endl;
 }

@@ -18,15 +18,22 @@ void solve()
 {
     int n;
     cin >> n;
-    int cnt=0;
-
-    while(n>=10){
-        int div = n/10;
-        cnt += 10*div;
-        n %= 10;
-        n += div;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin >> a[i];
     }
-
-    cnt += n;
+    int cnt = n-1;
+    while(cnt>0){
+        if(a[cnt-1]>=a[cnt])
+            cnt--;
+        else
+            break;
+    }
+    while(cnt>0){
+        if(a[cnt-1]<=a[cnt])
+            cnt--;
+        else
+            break;
+    }
     cout << cnt << endl;
 }

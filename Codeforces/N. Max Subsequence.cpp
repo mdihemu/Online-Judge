@@ -9,8 +9,9 @@ void solve();
 int32_t main()
 {
     IOS;
-    int t=1; cin >> t;
-    while(t--) solve();
+    int _=1;
+    //cin >> _;
+    while(_--) solve();
     return 0;
 }
 
@@ -18,15 +19,12 @@ void solve()
 {
     int n;
     cin >> n;
-    int cnt=0;
-
-    while(n>=10){
-        int div = n/10;
-        cnt += 10*div;
-        n %= 10;
-        n += div;
+    string s;
+    cin >> s;
+    int cnt = n;
+    for(int i=0;i<n-1;i++){
+        if(s[i] == s[i+1])
+            cnt--;
     }
-
-    cnt += n;
     cout << cnt << endl;
 }

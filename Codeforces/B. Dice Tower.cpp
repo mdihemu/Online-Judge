@@ -9,8 +9,8 @@ void solve();
 int32_t main()
 {
     IOS;
-    int t=1; cin >> t;
-    while(t--) solve();
+    int _=1; cin >> _;
+    while(_--) solve();
     return 0;
 }
 
@@ -18,15 +18,8 @@ void solve()
 {
     int n;
     cin >> n;
-    int cnt=0;
-
-    while(n>=10){
-        int div = n/10;
-        cnt += 10*div;
-        n %= 10;
-        n += div;
-    }
-
-    cnt += n;
-    cout << cnt << endl;
+    if(n%14>=1 && n%14<=6 && n>14)
+        cout << "YES\n";
+    else
+        cout << "NO\n";
 }

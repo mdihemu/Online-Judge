@@ -8,7 +8,8 @@ using namespace std;
 #define IN freopen("input.txt","r",stdin);
 #define OUT freopen("output.txt","w",stdout);
 
-const int N = 1e3 + 5;
+const int N = 2e5 + 5;
+const double pi = 3.1415926535897;
 
 void solve();
 void cf()
@@ -24,20 +25,12 @@ int32_t main()
 
 void solve()
 {
-    int n,d;
-    cin >> n >> d;
-    int a[N];
-    for(int i=1;i<=n;i++){
-        cin >> a[i];
-    }
-    while(d--){
-        for(int i=2;i<=n;i++){
-            if(a[i] > 0){
-                a[i]--;
-                a[i-1]++;
-                break;
-            }
-        }
-    }
-    cout << a[1] << endl;
+    long double n;
+    cin >> n;
+    n = 2 * n;
+    n = pi / n;
+    n = tan(n);
+    n = 1.0 / n;
+    cout << fixed << setprecision(9);
+    cout << n << endl;
 }

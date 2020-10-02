@@ -9,24 +9,21 @@ void solve();
 int32_t main()
 {
     IOS;
-    int t=1; cin >> t;
-    while(t--) solve();
+    int _=1; cin >> _;
+    while(_--) solve();
     return 0;
 }
 
 void solve()
 {
-    int n;
-    cin >> n;
-    int cnt=0;
-
-    while(n>=10){
-        int div = n/10;
-        cnt += 10*div;
-        n %= 10;
-        n += div;
-    }
-
+    int a,b;
+    cin >> a >> b;
+    int n = abs(a-b);
+    int cnt = 0;
+    cnt += n/5;
+    n %= 5;
+    cnt += n/2;
+    n %= 2;
     cnt += n;
     cout << cnt << endl;
 }
